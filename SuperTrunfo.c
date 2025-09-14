@@ -6,7 +6,6 @@
     int populacao1, populacao2, nPontosTuristicos1, nPontosTuristicos2;
     float areaKm1, pib1, areaKm2, pib2;
 
-
     printf ("Digite o estado (CARTA 1):\n");
     scanf (" %c", &cartaEstado1);
 
@@ -31,12 +30,11 @@
     printf ("CARTA 1: \n");
     printf ("ESTADO: %c \n", cartaEstado1 );
     printf ("CÓDIGO: %s \n", codCarta1 );
-    printf ("NOME DA CIDADE: %s\n", nomeCidade1);
+    printf ("NOME DA CIDADE: %s \n", nomeCidade1);
     printf ("POPULAÇÃO: %d\n", populacao1 );
     printf ("Área: %.2f km² \n", areaKm1);
     printf ("PIB: %.2f\n", pib1);
     printf ("PONTOS TURÍSTICOS: %d\n", nPontosTuristicos1);
-
 
     printf ("Digite o estado (CARTA 2):\n");
     scanf (" %c", &cartaEstado2);
@@ -67,11 +65,6 @@
     printf ("Área: %.2f km² \n", areaKm2);
     printf ("PIB: %.2f\n", pib2);
     printf ("PONTOS TURÍSTICOS: %d\n", nPontosTuristicos2);
-
-
-
-
-        
 
 return 0;
 }
