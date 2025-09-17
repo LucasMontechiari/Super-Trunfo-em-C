@@ -68,7 +68,7 @@
     printf ("Digite o número de pontos turísticos (CARTA 2):\n");
     scanf (" %d", &nPontosTuristicos2);
 
-    superPoder2 = populacao2 + areaKm2 + pib2 + pibPerCapita2 + (1.0f / densidade1) + nPontosTuristicos2;
+    superPoder2 = populacao2 + areaKm2 + pib2 + pibPerCapita2 + (1.0f / densidade2) + nPontosTuristicos2;
     densidade2 = populacao2 / areaKm2;
     pibPerCapita2 = pib2 / populacao2;
 
