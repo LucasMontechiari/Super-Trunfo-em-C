@@ -1,8 +1,10 @@
 #include <stdio.h>
-#include <locale.h>
+#include <stdlib.h>
+#include <windows.h>
 
     int main(){
-    setlocale(LC_ALL, "");
+    SetConsoleOutputCP(65001);
+    SetConsoleCP(65001);
         
     char cartaEstado1, cartaEstado2;
     char nomeCidade1[50], nomeCidade2[50], codCarta1[50], codCarta2[50];
@@ -31,9 +33,9 @@
     printf ("Digite o número de pontos turísticos (CARTA 1):\n");
     scanf (" %d", &nPontosTuristicos1);
 
-    superPoder1 = populacao1 + areaKm1 + pib1 + pibPerCapita1 + (1.0f / densidade1) + nPontosTuristicos1;
     densidade1 = populacao1 / areaKm1;
     pibPerCapita1 = pib1 / populacao1;
+    superPoder1 = populacao1 + areaKm1 + pib1 + pibPerCapita1 + (1.0f / densidade1) + nPontosTuristicos1;
 
     printf ("CARTA 1: \n");
     printf ("ESTADO: %c \n", cartaEstado1 );
@@ -68,9 +70,9 @@
     printf ("Digite o número de pontos turísticos (CARTA 2):\n");
     scanf (" %d", &nPontosTuristicos2);
 
-    superPoder2 = populacao2 + areaKm2 + pib2 + pibPerCapita2 + (1.0f / densidade2) + nPontosTuristicos2;
     densidade2 = populacao2 / areaKm2;
     pibPerCapita2 = pib2 / populacao2;
+    superPoder2 = populacao2 + areaKm2 + pib2 + pibPerCapita2 + (1.0f / densidade2) + nPontosTuristicos2;
 
     printf ("CARTA 2: \n");
     printf ("ESTADO: %c \n", cartaEstado2 );
@@ -101,7 +103,6 @@
     printf("DENSIDADE POPULACIONAL: %d\n", resultadoDensidade);
     printf("PIB PER CAPITA: %d\n", resultadoPibPerCapita);
     printf("SUPER PODER: %d\n", resultadoSuperPoder);
-
 
 return 0;
 }
