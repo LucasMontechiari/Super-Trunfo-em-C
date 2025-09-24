@@ -1,11 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <windows.h>
+
 
     int main(){
-    SetConsoleOutputCP(65001);
-    SetConsoleCP(65001);
-        
+            
     char cartaEstado1, cartaEstado2;
     char nomeCidade1[50], nomeCidade2[50], codCarta1[50], codCarta2[50];
     int nPontosTuristicos1, nPontosTuristicos2, resultadoPopulacao, resultadoArea, resultadoPib, resultadoPturisticos, resultadoDensidade, resultadoPibPerCapita, resultadoSuperPoder;
@@ -86,23 +84,84 @@
     printf("PIB PER CAPITA: %.2f\n", pibPerCapita2);
     printf("SUPER PODER: %.2f\n", superPoder2);
 
-    resultadoPopulacao = populacao1 > populacao2;
-    resultadoArea = areaKm1 > areaKm2;
-    resultadoPib = pib1 > pib2;
-    resultadoPturisticos = nPontosTuristicos1 > nPontosTuristicos2;
-    resultadoDensidade = densidade1 > densidade2;
-    resultadoPibPerCapita = pibPerCapita1 > pibPerCapita2;
-    resultadoSuperPoder = superPoder1 > superPoder2;
+    if (populacao1 > populacao2){
+        printf("A cidade 1 tem a maior população\n");
+    } else {
+        printf("A cidade 1 tem a maior população\n");  
+        }
 
-    //0 para carta 2 ganhar, 1 para carta 1 ganhar 
-    printf("RESULTADOS DA PARTIDA:\n");
-    printf("POPULAÇÃO: %d\n", resultadoPopulacao);
-    printf("ÁREA: %d\n", resultadoArea);
-    printf("PIB: %d\n", resultadoPib);
-    printf("PONTOS TURÍSTICOS: %d\n", resultadoPturisticos);
-    printf("DENSIDADE POPULACIONAL: %d\n", resultadoDensidade);
-    printf("PIB PER CAPITA: %d\n", resultadoPibPerCapita);
-    printf("SUPER PODER: %d\n", resultadoSuperPoder);
+    if (areaKm1 > areaKm2){
+        printf("A cidade 1 tem a maior Área em Km²\n");
+    } else {
+        printf("A cidade 1 tem a maior Área em Km²\n"); 
+    }
+    
+    if (pib1 > pib2){
+        printf("A cidade 1 tem o maior PIB\n");
+    } else {
+        printf("A cidade 2 tem o maior PIB\n");
+    }
+
+    if (nPontosTuristicos1 > nPontosTuristicos2){
+        printf("A cidade 1 tem mais Pontos Turisticos\n");
+    } else {
+        printf("A cidade 2 tem mais Pontos Turisticos\n");
+    }
+
+    if (densidade1 > densidade2){
+        printf("A cidade 1 tem a maior Densidade Populacional\n");
+    } else {
+        printf("A cidade 2 tem a maior Densidade Populacional\n");
+    }
+
+    if (pibPerCapita1 > pibPerCapita2){
+        printf("A cidade 1 tem o maior PIB PER CAPITA\n");
+    } else {
+        printf("A cidade 2 tem o maior PIB PER CAPITA\n");
+    }
+
+    if (superPoder1 > superPoder2){
+        printf("A cidade 1 tem o maior Super Poder\n");
+    } else {
+        printf("A cidade 2 tem o maior Super Poder\n");    
+    }
+
+        printf("\nRESULTADOS DA PARTIDA:\n");
+
+    if (resultadoPopulacao)
+        printf("POPULAÇÃO: Carta 1 venceu (%lu > %lu)\n", populacao1, populacao2);
+    else
+        printf("POPULAÇÃO: Carta 2 venceu (%lu > %lu)\n", populacao2, populacao1);
+
+    if (resultadoArea)
+        printf("ÁREA: Carta 1 venceu (%.2f > %.2f)\n", areaKm1, areaKm2);
+    else
+        printf("ÁREA: Carta 2 venceu (%.2f > %.2f)\n", areaKm2, areaKm1);
+
+    if (resultadoPib)
+        printf("PIB: Carta 1 venceu (%.2f > %.2f)\n", pib1, pib2);
+    else
+        printf("PIB: Carta 2 venceu (%.2f > %.2f)\n", pib2, pib1);
+
+    if (resultadoPturisticos)
+        printf("PONTOS TURÍSTICOS: Carta 1 venceu (%d > %d)\n", nPontosTuristicos1, nPontosTuristicos2);
+    else
+        printf("PONTOS TURÍSTICOS: Carta 2 venceu (%d > %d)\n", nPontosTuristicos2, nPontosTuristicos1);
+
+    if (resultadoDensidade)
+        printf("DENSIDADE POPULACIONAL: Carta 1 venceu (%.2f > %.2f)\n", densidade1, densidade2);
+    else
+        printf("DENSIDADE POPULACIONAL: Carta 2 venceu (%.2f > %.2f)\n", densidade2, densidade1);
+
+    if (resultadoPibPerCapita)
+        printf("PIB PER CAPITA: Carta 1 venceu (%.2f > %.2f)\n", pibPerCapita1, pibPerCapita2);
+    else
+        printf("PIB PER CAPITA: Carta 2 venceu (%.2f > %.2f)\n", pibPerCapita2, pibPerCapita1);
+
+    if (resultadoSuperPoder)
+        printf("SUPER PODER: Carta 1 venceu (%.2f > %.2f)\n", superPoder1, superPoder2);
+    else
+        printf("SUPER PODER: Carta 2 venceu (%.2f > %.2f)\n", superPoder2, superPoder1);
 
     printf("\nPressione ENTER para sair...");
     getchar();
