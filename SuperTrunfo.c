@@ -104,5 +104,9 @@
     printf("PIB PER CAPITA: %d\n", resultadoPibPerCapita);
     printf("SUPER PODER: %d\n", resultadoSuperPoder);
 
+    printf("\nPressione ENTER para sair...");
+    getchar();
+    getchar();
+
 return 0;
 }
