@@ -12,6 +12,7 @@ SetConsoleCP(65001);
     float areaKm1, pib1, areaKm2, pib2, densidade1, densidade2, pibPerCapita1, pibPerCapita2, superPoder1, superPoder2;
     unsigned long int populacao1, populacao2; 
 
+    //Entrada dos dados da Carta 1
     printf ("Digite o estado (CARTA 1):\n");
     scanf (" %c", &cartaEstado1);
 
@@ -33,10 +34,12 @@ SetConsoleCP(65001);
     printf ("Digite o número de pontos turísticos (CARTA 1):\n");
     scanf (" %d", &nPontosTuristicos1);
 
+    //Cálculo de Densidade, PIB per capita e Super Poder da Carta 1
     densidade1 = populacao1 / areaKm1;
     pibPerCapita1 = pib1 / populacao1;
     superPoder1 = populacao1 + areaKm1 + pib1 + pibPerCapita1 + (1.0f / densidade1) + nPontosTuristicos1;
 
+    //Dados da Carta 1
     printf ("\n CARTA 1: \n");
     printf ("ESTADO: %c\n", cartaEstado1);
     printf ("CÓDIGO: %s \n", codCarta1 );
@@ -49,6 +52,7 @@ SetConsoleCP(65001);
     printf("PIB PER CAPITA: %.2f\n", pibPerCapita1);
     printf("SUPER PODER: %.2f\n", superPoder1);
 
+    //Entrada dos dados da Carta 2
     printf ("Digite o estado (CARTA 2):\n");
     scanf (" %c", &cartaEstado2);
 
@@ -70,10 +74,12 @@ SetConsoleCP(65001);
     printf ("Digite o número de pontos turísticos (CARTA 2):\n");
     scanf (" %d", &nPontosTuristicos2);
 
+    //Cálculo de Densidade, PIB per capita e Super Poder da Carta 2
     densidade2 = populacao2 / areaKm2;
     pibPerCapita2 = pib2 / populacao2;
     superPoder2 = populacao2 + areaKm2 + pib2 + pibPerCapita2 + (1.0f / densidade2) + nPontosTuristicos2;
 
+    //Dados da Carta 2
     printf ("\n CARTA 2: \n");
     printf ("ESTADO: %c\n", cartaEstado2);
     printf ("CÓDIGO: %s \n", codCarta2 );
@@ -97,6 +103,7 @@ SetConsoleCP(65001);
     printf("5. Densidade Populacional\n");
     scanf(" %d", &atributo1);
 
+    //Escolha do primeiro atributo a ser comparado
     switch(atributo1) {
         case 1:
             printf("Você escolheu comparar a População.\n");
@@ -122,7 +129,8 @@ SetConsoleCP(65001);
             printf("Opção inválida.\n");
             break;
     } 
-   do {
+   //Escolha do segundo atributo a ser comparado (Em caso de selecionar o mesmo atributo, o usuário deve escolher novamente)
+    do {
     printf("Escolha o segundo atributo (diferente do primeiro):\n");
     printf("1. População\n");
     printf("2. Área\n");
@@ -159,6 +167,7 @@ SetConsoleCP(65001);
             printf("Opção inválida.\n");
             break;
         }                  
+    //Resultado final da partida mostrando os nomes das cidades, os atributos comparados, os valores de cada atributo e o vencedor
     printf("Cidades: %s e %s \n", nomeCidade1, nomeCidade2);
     printf("Os atributo comparados foram: %d e %d\n", atributo1, atributo2);
     printf("O valor do atributo de cada carta é: \n");
@@ -176,6 +185,7 @@ SetConsoleCP(65001);
     printf("A soma dos atributos da Carta 1 é: %.2f \n", superPoder1);
     printf("A soma dos atributos da Carta 2 é: %.2f \n", superPoder2);
 
+    //Condição para definir o vencedor
     if (resultado1 == 1 && resultado2 == 1) {
         printf("🏆 Carta 1 venceu ambas as comparações!\n");
     } else if ((resultado1 == 1 && resultado2 == 0) || (resultado1 == 0 && resultado2 == 1)) {
